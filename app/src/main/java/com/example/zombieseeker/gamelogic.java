@@ -77,5 +77,5 @@ public class gamelogic {
     public int totalPlanets(int row_index, int col_index){
         return checkCol(col_index) + checkRow(row_index);
     }
-    
+
 }
