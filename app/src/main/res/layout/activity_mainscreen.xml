@@ -53,7 +53,7 @@
                 android:id="@+id/helpBtn"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:text="Help" />
+                android:text="help" />
         </LinearLayout>
 
         <ImageView
