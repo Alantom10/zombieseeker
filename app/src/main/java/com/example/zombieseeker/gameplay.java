@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -58,6 +60,11 @@ public class gameplay extends AppCompatActivity {
     private void gridButtonClicked(int i, int j) {
         Button button = buttons[i][j];
         button.setBackgroundResource(R.drawable.rocket);
+        int newHeight = button.getHeight();
+        int newWidth= button.getWidth();
+
+        Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.rocket);
+        Bitmap scaled = Bitmap.createScaledBitmap(original, newWidth, newHeight,true);
     }
 
     public static Intent startGame(Context context){
