@@ -33,8 +33,12 @@ public class mainscreen extends AppCompatActivity {
         });
     }
 
+    public static Intent returnHelpActivity(Context c){
+        return new Intent(c, mainscreen.class);
+    }
+
     private void setupHelpBtn() {
-        Button helpActivityBtn = (Button) findViewById(R.id.helpbutton);
+        Button helpActivityBtn = (Button) findViewById(R.id.helpBtn);
         helpActivityBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
