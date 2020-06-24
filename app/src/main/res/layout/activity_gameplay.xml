@@ -10,12 +10,11 @@
 
     <TableLayout
         android:id="@+id/tableforButtons"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="625dp"
+        android:layout_height="272dp"
         android:stretchColumns="*"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    </TableLayout>
+        app:layout_constraintTop_toTopOf="parent"></TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

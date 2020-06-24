@@ -75,10 +75,45 @@ public class gameplay extends AppCompatActivity {
     private void setButtonBackground(Button button) {
         int newHeight = button.getHeight();
         int newWidth= button.getWidth();
-        Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.planet1new);
-        Bitmap scaled = Bitmap.createScaledBitmap(original, newWidth, newHeight,true);
-        Resources resource = getResources();
-        button.setBackground(new BitmapDrawable(resource, scaled));
+        int max = 7;
+        int min = 1;
+        int random_int = (int) (Math.random() * (max - min + 1) + min);
+        if(random_int == 1){
+            Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.planet1);
+            Bitmap scaled = Bitmap.createScaledBitmap(original, newWidth, newHeight,true);
+            Resources resource = getResources();
+            button.setBackground(new BitmapDrawable(resource, scaled));
+        }
+        else if(random_int == 2){
+            Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.planet2);
+            Bitmap scaled = Bitmap.createScaledBitmap(original, newWidth, newHeight,true);
+            Resources resource = getResources();
+            button.setBackground(new BitmapDrawable(resource, scaled));
+        }
+        else if(random_int == 3){
+            Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.planet3);
+            Bitmap scaled = Bitmap.createScaledBitmap(original, newWidth, newHeight,true);
+            Resources resource = getResources();
+            button.setBackground(new BitmapDrawable(resource, scaled));
+        }
+        else if(random_int == 4){
+            Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.planet4);
+            Bitmap scaled = Bitmap.createScaledBitmap(original, newWidth, newHeight,true);
+            Resources resource = getResources();
+            button.setBackground(new BitmapDrawable(resource, scaled));
+        }
+        else if(random_int == 5){
+            Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.planet5);
+            Bitmap scaled = Bitmap.createScaledBitmap(original, newWidth, newHeight,true);
+            Resources resource = getResources();
+            button.setBackground(new BitmapDrawable(resource, scaled));
+        }
+        else {
+            Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.planet6);
+            Bitmap scaled = Bitmap.createScaledBitmap(original, newWidth, newHeight,true);
+            Resources resource = getResources();
+            button.setBackground(new BitmapDrawable(resource, scaled));
+        }
     }
 
     private void lockButtonSizes() {
