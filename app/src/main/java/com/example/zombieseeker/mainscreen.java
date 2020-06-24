@@ -21,6 +21,10 @@ public class mainscreen extends AppCompatActivity {
         return new Intent(context, mainscreen.class);
     }
 
+    public static Intent returnHelpActivity(Context c){
+        return new Intent(c, mainscreen.class);
+    }
+
     private void setupHelpBtn() {
         Button helpActivityBtn = (Button) findViewById(R.id.helpBtn);
         helpActivityBtn.setOnClickListener(new View.OnClickListener() {
