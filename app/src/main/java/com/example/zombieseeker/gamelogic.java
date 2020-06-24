@@ -4,7 +4,7 @@ public class gamelogic {
     private int rows;
     private int cols;
     private int num_planets;
-    private boolean[][] board;
+    private int[][] board;
 
     public void setCols(int cols) {
         this.cols = cols;
@@ -34,23 +34,23 @@ public class gamelogic {
         int max = cols*rows;
         int min = 0;
         int arr[];
-        board = new boolean[rows][cols];
+        board = new int[rows][cols];
         for (int i = 0; i < num_planets; i++) {
             int random_int = (int) (Math.random() * (max - min + 1) + min);
             int row_index = random_int/cols;
-            board[row_index][random_int%cols] = true;
+            board[row_index][random_int%cols] = 1;
         }
     }
 
     public boolean checkPlanet(int row_index, int col_index){
-        return board[row_index][col_index];
+        return (1 ==board[row_index][col_index]);
     }
 
 
     public int checkCol(int col_index){
         int count = 0;
         for(int i = 0; i < rows; i++){
-            if(board[i][col_index]){
+            if(board[i][col_index] == 1){
                 count = count + 1;
             }
         }
@@ -60,7 +60,7 @@ public class gamelogic {
     public int checkRow(int row_index){
         int count = 0;
         for(int i = 0; i < cols; i++){
-            if(board[row_index][i]){
+            if(board[row_index][i] == 1){
                 count = count + 1;
             }
         }
