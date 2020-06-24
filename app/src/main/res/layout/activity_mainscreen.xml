@@ -50,10 +50,10 @@
                 android:text="Options" />
 
             <Button
-                android:id="@+id/button8"
+                android:id="@+id/helpBtn"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:text="helpBtn" />
+                android:text="help" />
         </LinearLayout>
 
         <ImageView

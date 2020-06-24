@@ -14,8 +14,7 @@ public class gameplay extends AppCompatActivity {
         setContentView(R.layout.activity_gameplay);
     }
 
-    public static Intent startGame(Context c) {
+    public static Intent startGame(Context c){
         return new Intent(c, gameplay.class);
     }
-
 }

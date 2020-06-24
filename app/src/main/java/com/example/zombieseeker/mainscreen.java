@@ -21,8 +21,7 @@ public class mainscreen extends AppCompatActivity {
         return new Intent(context, mainscreen.class);
     }
 
-    private void setupPlayBtn() {
-
+    private void setupPlayBtn(){
         Button playBtn = (Button) findViewById(R.id.playGameBtn);
         playBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,5 +31,4 @@ public class mainscreen extends AppCompatActivity {
             }
         });
     }
-
 }
