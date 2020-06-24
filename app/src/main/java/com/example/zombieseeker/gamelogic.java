@@ -35,10 +35,17 @@ public class gamelogic {
         int min = 0;
         int arr[];
         board = new int[rows][cols];
-        for (int i = 0; i < num_planets; i++) {
+        int i = 0;
+        while(i < num_planets) {
             int random_int = (int) (Math.random() * (max - min + 1) + min);
             int row_index = random_int/cols;
-            board[row_index][random_int%cols] = 1;
+            if(board[row_index][random_int%cols] == 1){
+                continue;
+            }
+            else{
+                i = i + 1;
+                board[row_index][random_int%cols] = 1;
+            }
         }
     }
 
@@ -70,7 +77,5 @@ public class gamelogic {
     public int totalPlanets(int row_index, int col_index){
         return checkCol(col_index) + checkRow(row_index);
     }
-
-
-
+    
 }
