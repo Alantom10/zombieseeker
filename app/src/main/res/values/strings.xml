@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Planet Seeker</string>
+    <string name="skipBtnText"><![CDATA[Skip>>]]></string>
 </resources>
