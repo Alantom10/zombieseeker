@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,14 +15,19 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 
 public class gameplay extends AppCompatActivity {
-    private int rows = 5;
-    private int cols = 4;
+    private int rows = 4;
+    private int cols = 6;
     Button buttons[][] = new Button[rows][cols];
+    gamelogic obj = new gamelogic();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gameplay);
+        obj.setCols(cols);
+        obj.setRows(rows);
+        obj.setNum_planets(8);
+        obj.initializeBoard();
         populateButtons();
     }
 
@@ -59,12 +66,31 @@ public class gameplay extends AppCompatActivity {
 
     private void gridButtonClicked(int i, int j) {
         Button button = buttons[i][j];
-        button.setBackgroundResource(R.drawable.rocket);
+        lockButtonSizes();
+        if(obj.checkPlanet(i, j)){
+            setButtonBackground(button);
+        }
+    }
+
+    private void setButtonBackground(Button button) {
         int newHeight = button.getHeight();
         int newWidth= button.getWidth();
-
-        Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.rocket);
+        Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.planet1new);
         Bitmap scaled = Bitmap.createScaledBitmap(original, newWidth, newHeight,true);
+        Resources resource = getResources();
+        button.setBackground(new BitmapDrawable(resource, scaled));
+    }
+
+    private void lockButtonSizes() {
+        for(int i = 0; i < rows; i++){
+            for(int j = 0; j < cols; j++){
+                Button button = buttons[i][j];
+                button.setMinWidth(button.getWidth());
+                button.setMaxWidth(button.getWidth());
+                button.setMinHeight(button.getHeight());
+                button.setMaxHeight(button.getHeight());
+            }
+        }
     }
 
     public static Intent startGame(Context context){
