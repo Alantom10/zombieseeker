@@ -68,7 +68,14 @@ public class gameplay extends AppCompatActivity {
         Button button = buttons[i][j];
         lockButtonSizes();
         if(obj.checkPlanet(i, j)){
+            obj.revealPlanet(i,j);
             setButtonBackground(button);
+        }
+        else if(obj.checkRevealedPlanet(i,j)){
+            button.setText(Integer.toString(obj.totalPlanets(i, j)));
+        }
+        else {
+            button.setText(Integer.toString(obj.totalPlanets(i, j)));
         }
     }
 
