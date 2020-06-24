@@ -38,13 +38,13 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/button6"
+                android:id="@+id/playGameBtn"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:text="Play Game!" />
 
             <Button
-                android:id="@+id/button7"
+                android:id="@+id/optionsBtn"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:text="Options" />
@@ -53,7 +53,7 @@
                 android:id="@+id/button8"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:text="Help" />
+                android:text="helpBtn" />
         </LinearLayout>
 
         <ImageView
