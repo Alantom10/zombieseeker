@@ -39,20 +39,20 @@
 
             <Button
                 android:id="@+id/playGameBtn"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_width="168dp"
+                android:layout_height="62dp"
                 android:text="Play Game!" />
 
             <Button
                 android:id="@+id/optionsBtn"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_width="168dp"
+                android:layout_height="62dp"
                 android:text="Options" />
 
             <Button
                 android:id="@+id/helpBtn"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_width="168dp"
+                android:layout_height="62dp"
                 android:text="help" />
         </LinearLayout>
 
@@ -61,6 +61,6 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/astronaut" />
+            app:srcCompat="@drawable/planetseeker" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
