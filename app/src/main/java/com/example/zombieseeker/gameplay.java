@@ -106,6 +106,9 @@ public class gameplay extends AppCompatActivity {
             String s = "Scans: " +  Integer.toString(scans);
             x.setText(s);
         }
+        if(obj.getplanets_Found() == obj.getNum_planets()){
+            //code for alert box
+        }
     }
 
     private void setButtonBackground(Button button) {
