@@ -31,7 +31,7 @@ public class gameplay extends AppCompatActivity {
         obj.setNum_planets(8);
         obj.initializeBoard();
         final TextView count = (TextView) findViewById(R.id.textViewforCount);
-        String s = "Found " + Integer.toString(obj.getplanets_Found()) + " of " + Integer.toString(obj.getNum_planets()) + "planets";
+        String s = "Found " + Integer.toString(obj.getplanets_Found()) + " of " + Integer.toString(obj.getNum_planets()) + " planets";
         count.setText(s);
         final TextView x = (TextView) findViewById(R.id.Scans);
         s = "Scans: " +  Integer.toString(scans);
