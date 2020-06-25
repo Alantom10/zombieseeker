@@ -1,5 +1,7 @@
 package com.example.zombieseeker;
 
+import android.util.Log;
+
 public class gamelogic {
     private int rows;
     private int cols;
@@ -31,23 +33,34 @@ public class gamelogic {
     }
 
     public void initializeBoard() {
-        int max = cols * rows;
-        int min = 0;
-        int arr[];
+        int max;
+        int min;
+        int arr[] = new int[rows*cols];
+        int pos[] = new int[num_planets];
         board = new int[rows][cols];
         int i = 0;
         for (i = 0; i < rows; i++)
             for (int j = 0; j < cols; j++) {
                 board[i][j] = -1;
             }
+        for(i = 0; i < rows*cols;i++) {
+            arr[i] = i;
+        }
+        for(i = 0; i < num_planets; i++) {
+            min = 0;
+            max = rows * cols - i - 1;
+            int random_int = (int) (Math.random() * (max - min + 1) + min);
+            Log.i("app", Integer.toString(random_int));
+            pos[i] = arr[random_int];
+            Log.i("app", Integer.toString(pos[i]) + "\n");
+            arr[random_int] = arr[max - 1];
+            arr[max - 1] = 0;
+        }
         i = 0;
         while(i < num_planets) {
-            int random_int = (int) (Math.random() * (max - min + 1) + min);
-            int row_index = random_int/cols;
-            if(board[row_index][random_int%cols] != 1){
-                i = i + 1;
-                board[row_index][random_int%cols] = 1;
-            }
+            int row_index = pos[i]/cols;
+            board[row_index][pos[i]%cols] = 1;
+            i = i + 1;
         }
     }
 
