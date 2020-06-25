@@ -1,12 +1,15 @@
 package com.example.zombieseeker;
 
 import android.util.Log;
+import android.widget.Button;
 
 public class gamelogic {
     private int rows;
     private int cols;
     private int num_planets;
+    private int planets_Found = 0;
     private int[][] board;
+    private int numScans = 0;
 
     public void setCols(int cols) {
         this.cols = cols;
@@ -14,6 +17,10 @@ public class gamelogic {
 
     public int getCols() {
         return cols;
+    }
+
+    public int getplanets_Found(){
+        return planets_Found;
     }
 
     public void setRows(int rows) {
@@ -50,9 +57,7 @@ public class gamelogic {
             min = 0;
             max = rows * cols - i - 1;
             int random_int = (int) (Math.random() * (max - min + 1) + min);
-            Log.i("app", Integer.toString(random_int));
             pos[i] = arr[random_int];
-            Log.i("app", Integer.toString(pos[i]) + "\n");
             arr[random_int] = arr[max - 1];
             arr[max - 1] = 0;
         }
@@ -64,15 +69,20 @@ public class gamelogic {
         }
     }
 
+
     public boolean checkPlanet(int row_index, int col_index){
-        return (1 == board[row_index][col_index]);
+        if(1 == board[row_index][col_index]){
+            planets_Found = planets_Found + 1;
+            return true;
+        }
+        return false;
     }
 
 
     public int checkCol(int col_index){
         int count = 0;
         for(int i = 0; i < rows; i++){
-            if(board[i][col_index] == 1 || board[i][col_index] == 0){
+            if(board[i][col_index] == 1){
                 count = count + 1;
             }
         }
@@ -82,12 +92,13 @@ public class gamelogic {
     public int checkRow(int row_index){
         int count = 0;
         for(int i = 0; i < cols; i++){
-            if(board[row_index][i] == 1 || board[row_index][i] == 0){
+            if(board[row_index][i] == 1){
                 count = count + 1;
             }
         }
         return count;
     }
+
 
     public int totalPlanets(int row_index, int col_index){
         return checkCol(col_index) + checkRow(row_index);
@@ -100,4 +111,5 @@ public class gamelogic {
     public void revealPlanet(int row_index, int col_index){
         board[row_index][col_index] = 0;
     }
+
 }

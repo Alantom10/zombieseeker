@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.TextView;
 
 public class gameplay extends AppCompatActivity {
     private int rows = 4;
@@ -28,6 +29,9 @@ public class gameplay extends AppCompatActivity {
         obj.setRows(rows);
         obj.setNum_planets(8);
         obj.initializeBoard();
+        final TextView count = (TextView) findViewById(R.id.textViewforCount);
+        String s = "Found " + Integer.toString(obj.getplanets_Found()) + " of " + Integer.toString(obj.getNum_planets()) + "planets";
+        count.setText(s);
         populateButtons();
     }
 
@@ -69,6 +73,17 @@ public class gameplay extends AppCompatActivity {
         lockButtonSizes();
         if(obj.checkPlanet(i, j)){
             obj.revealPlanet(i,j);
+            for (int a = 0; a < rows; a++){
+                for(int b = 0; b < cols; b++){
+                    Button bt = buttons[a][b];
+                    if(bt.getText() != "") {
+                        bt.setText(Integer.toString(obj.totalPlanets(a, b)));
+                    }
+                }
+            }
+            final TextView count = (TextView) findViewById(R.id.textViewforCount);
+            String s = "Found " + Integer.toString(obj.getplanets_Found()) + " of " + Integer.toString(obj.getNum_planets()) + "planets";
+            count.setText(s);
             setButtonBackground(button);
         }
         else if(obj.checkRevealedPlanet(i,j)){
