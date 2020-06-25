@@ -20,6 +20,7 @@ public class gameplay extends AppCompatActivity {
     private int cols = 6;
     Button buttons[][] = new Button[rows][cols];
     gamelogic obj = new gamelogic();
+    private int scans = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,9 +89,19 @@ public class gameplay extends AppCompatActivity {
         }
         else if(obj.checkRevealedPlanet(i,j)){
             button.setText(Integer.toString(obj.totalPlanets(i, j)));
+            button.setEnabled(false);
+            scans = scans + 1;
+            final TextView x= (TextView) findViewById(R.id.Scans);
+            String s = "Scans: " +  Integer.toString(scans);
+            x.setText(s);
         }
         else {
             button.setText(Integer.toString(obj.totalPlanets(i, j)));
+            button.setEnabled(false);
+            scans = scans + 1;
+            final TextView x = (TextView) findViewById(R.id.Scans);
+            String s = "Scans: " +  Integer.toString(scans);
+            x.setText(s);
         }
     }
 
