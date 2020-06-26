@@ -9,6 +9,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
@@ -19,7 +20,7 @@ public class gameplay extends AppCompatActivity {
     private GameConfigurations configurations;
     private int rows;
     private int cols;
-    Button buttons[][] = new Button[rows][cols];
+    Button buttons[][];
     gamelogic obj = new gamelogic();
     private int scans = 0;
 
@@ -28,10 +29,11 @@ public class gameplay extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gameplay);
         configurations = GameConfigurations.getInstance();
-        rows = configurations.getGameRows();
-        cols = configurations.getGameCols();
-        obj.setCols(cols);
-        obj.setRows(rows);
+        this.rows = configurations.getGameRows();
+        this.cols = configurations.getGameCols();
+        buttons = new Button[rows][cols];
+        obj.setCols(this.cols);
+        obj.setRows(this.rows);
         obj.setNum_planets(configurations.getGameTargets());
         configurations.setGamesPlayed(configurations.getGamesPlayed() + 1);
         obj.initializeBoard();

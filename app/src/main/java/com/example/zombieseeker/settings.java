@@ -22,7 +22,7 @@ public class settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-//        setupBack();
+        setupBack();
         configurations = GameConfigurations.getInstance();
         createBoardSizeRadioButtons();
         createNumPlanetsRadioButtons();
@@ -79,15 +79,14 @@ public class settings extends AppCompatActivity {
         return new Intent(context, settings.class);
     }
 
-//    private void setupBack() {
-//
-//        Button back = (Button) findViewById(R.id.optionsBtn);
-//        back.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = mainscreen.skipAnimation(settings.this);
-//                startActivity(intent);
-//            }
-//        });
-//    }
+    private void setupBack() {
+        Button back = (Button) findViewById(R.id.back1);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = mainscreen.skipAnimation(settings.this);
+                startActivity(intent);
+            }
+        });
+    }
 }
