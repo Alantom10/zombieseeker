@@ -23,7 +23,7 @@ public class helpactivity extends AppCompatActivity {
         return new Intent(c, helpactivity.class);
     }
 
-    private void setupreturnHelpBtn() {
+    private void setupreturnHelpBtn() {     // setting up button to return to mainscreen from the HElp button
         Button helpActivityBtn = (Button) findViewById(R.id.helpbutton);
         helpActivityBtn.setOnClickListener(new View.OnClickListener() {
             @Override
