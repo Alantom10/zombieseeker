@@ -66,29 +66,28 @@
 
     <RadioGroup
         android:id="@+id/boardSizeRadioGroup"
-        android:layout_width="518dp"
-        android:layout_height="41dp"
+        android:layout_width="540dp"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.788"
+        app:layout_constraintHorizontal_bias="0.774"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.359" >
+        app:layout_constraintVertical_bias="0.36">
 
     </RadioGroup>
 
     <RadioGroup
         android:id="@+id/numPlanetsRadioGroup"
-        android:layout_width="503dp"
-        android:layout_height="41dp"
-        tools:layout_editor_absoluteX="168dp"
-        tools:layout_editor_absoluteY="242dp" >
-
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="RadioButton" />
-    </RadioGroup>
+        android:layout_width="530dp"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.736"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.669" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

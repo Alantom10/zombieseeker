@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -18,12 +20,12 @@ public class settings extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
 
 //        setupBack();
-//        createBoardSizeRadioButtons();
+        createBoardSizeRadioButtons();
         createNumPlanetsRadioButtons();
-    }
+   }
 
     private void createNumPlanetsRadioButtons() {
-        RadioGroup group = (RadioGroup) findViewById(R.id.numPlanetsRadioGroup);
+        RadioGroup numPlanet_group = (RadioGroup) findViewById(R.id.numPlanetsRadioGroup);
 
         int[] numPlanets = getResources().getIntArray(R.array.num_of_planets);
 
@@ -31,14 +33,30 @@ public class settings extends AppCompatActivity {
             int numPlanet = numPlanets[i];
 
             RadioButton button = new RadioButton(this);
-            button.setText(numPlanet + " planets");
+            button.setText(Integer.toString(numPlanet));
+            button.setTextColor(Color.WHITE);
 
-            group.addView(button);
+            numPlanet_group.addView(button);
         }
     }
 
-//    private void createBoardSizeRadioButtons() {
-//    }
+    private void createBoardSizeRadioButtons() {
+        RadioGroup boardSize_group = (RadioGroup) findViewById(R.id.boardSizeRadioGroup);
+
+        int[] rows = getResources().getIntArray(R.array.board_size_rows);
+        int[] cols = getResources().getIntArray(R.array.board_size_cols);
+
+        for (int i = 0; i < rows.length; i++) {
+            int board_row = rows[i];
+            int board_col = cols[i];
+
+            RadioButton button = new RadioButton(this);
+            button.setText(board_row + " x " + board_col);
+            button.setTextColor(Color.WHITE);
+
+            boardSize_group.addView(button);
+        }
+    }
 
     public static Intent switchOptions(Context context) {
         return new Intent(context, settings.class);
