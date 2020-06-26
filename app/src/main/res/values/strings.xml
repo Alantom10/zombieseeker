@@ -5,4 +5,17 @@
     <string name="options">Options</string>
     <string name="play_game">Play Game!</string>
     <string name="help">help</string>
+    <string name="settings">Settings</string>
+    <string name="board_size">Board Size:</string>
+    <string name="number_of_planets">Number of Planets:</string>
+    <string name="erase_times_played">Erase times played</string>
+    <string name="select_a_cell_to_begin_the_game_the_uncovered_cell_reveals_the_number_of_planets_present_within_the_cells_row_or_column_each_time_a_planet_is_uncovered_the_numbered_cells_in_its_row_and_column_decrements_to_show_how_many_planets_are_let_to_be_uncovered">Select a cell to begin the game. THe uncovered cell reveals the number of planets present within the cells row or column. Each time a planet is uncovered the numbered cells in its row and column decrements to show how many planets are let to be uncovered.</string>
+    <string name="how_do_i_solve_planet_seeker">How do I solve Planet Seeker?</string>
+    <string name="planet_seeker_begins_with_a_grid_which_contains_covered_cells_that_may_contain_mines_in_them">Planet seeker begins with a grid which contains covered cells that may contain mines in them.</string>
+    <string name="f_a_q">F.A.Q</string>
+    <string name="creators">Creators:</string>
+    <string name="sahil_modak_amp_alan_thomas"><![CDATA[Sahil Modak & Alan Thomas]]></string>
+    <string name="help_center">Help Center</string>
+    <string name="goal_is_to_uncover_all_planets_in_the_grid_with_the_least_number_of_moves">Goal is to uncover all planets in the grid with the least number of moves.</string>
+    <string name="back">Back</string>
 </resources>
