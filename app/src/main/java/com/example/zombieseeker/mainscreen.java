@@ -16,6 +16,7 @@ public class mainscreen extends AppCompatActivity {
         setContentView(R.layout.activity_mainscreen);
         setupPlayBtn();
         setupHelpBtn();
+        setupOptionsBtn();
     }
 
     public static Intent skipAnimation(Context context){
@@ -47,4 +48,17 @@ public class mainscreen extends AppCompatActivity {
             }
         });
     }
+
+    private void setupOptionsBtn() {
+
+        Button options = (Button) findViewById(R.id.optionsBtn);
+        options.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = settings.switchOptions(mainscreen.this);
+                startActivity(intent);
+            }
+        });
+    }
+
 }
