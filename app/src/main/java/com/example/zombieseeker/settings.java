@@ -56,13 +56,19 @@ public class settings extends AppCompatActivity {
         int[] cols = getResources().getIntArray(R.array.board_size_cols);
 
         for (int i = 0; i < rows.length; i++) {
-            int board_row = rows[i];
-            int board_col = cols[i];
+            final int board_row = rows[i];
+            final int board_col = cols[i];
 
             RadioButton button = new RadioButton(this);
             button.setText(board_row + " x " + board_col);
             button.setTextColor(Color.WHITE);
-
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(settings.this, "You clicked " + Integer.toString(board_row) + " x " + Integer.toString(board_col), Toast.LENGTH_SHORT)
+                            .show();
+                }
+            });
             boardSize_group.addView(button);
         }
     }
