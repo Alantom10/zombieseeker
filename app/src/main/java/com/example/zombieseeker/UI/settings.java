@@ -1,4 +1,4 @@
-package com.example.zombieseeker;
+package com.example.zombieseeker.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,12 +6,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
+
+import com.example.zombieseeker.model.GameConfigurations;
+import com.example.zombieseeker.R;
 
 public class settings extends AppCompatActivity {
 
@@ -21,12 +22,21 @@ public class settings extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-
-        setupBack();
+        setupErase();
         configurations = GameConfigurations.getInstance();
         createBoardSizeRadioButtons();
         createNumPlanetsRadioButtons();
    }
+
+    private void setupErase() {
+        Button back = (Button) findViewById(R.id.eraseGames);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                configurations.setGamesPlayed(0);
+            }
+        });
+    }
 
     private void createNumPlanetsRadioButtons() {
         RadioGroup numPlanet_group = (RadioGroup) findViewById(R.id.numPlanetsRadioGroup);
@@ -79,14 +89,4 @@ public class settings extends AppCompatActivity {
         return new Intent(context, settings.class);
     }
 
-    private void setupBack() {
-        Button back = (Button) findViewById(R.id.back1);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = mainscreen.skipAnimation(settings.this);
-                startActivity(intent);
-            }
-        });
-    }
 }

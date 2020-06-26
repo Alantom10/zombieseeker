@@ -1,4 +1,4 @@
-package com.example.zombieseeker;
+package com.example.zombieseeker.model;
 
 public class GameConfigurations {
     private int gameRows = 6;

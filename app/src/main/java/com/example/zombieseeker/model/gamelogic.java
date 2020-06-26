@@ -1,4 +1,4 @@
-package com.example.zombieseeker;
+package com.example.zombieseeker.model;
 
 import android.util.Log;
 import android.widget.Button;

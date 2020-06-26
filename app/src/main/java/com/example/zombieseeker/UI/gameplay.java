@@ -1,4 +1,4 @@
-package com.example.zombieseeker;
+package com.example.zombieseeker.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,12 +9,15 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+
+import com.example.zombieseeker.model.GameConfigurations;
+import com.example.zombieseeker.R;
+import com.example.zombieseeker.model.gamelogic;
 
 public class gameplay extends AppCompatActivity {
     private GameConfigurations configurations;
@@ -35,6 +38,9 @@ public class gameplay extends AppCompatActivity {
         obj.setCols(this.cols);
         obj.setRows(this.rows);
         obj.setNum_planets(configurations.getGameTargets());
+        final TextView numGames = (TextView) findViewById(R.id.timesPlayed);
+        String y = "Times Played: " + Integer.toString(configurations.getGamesPlayed());
+        numGames.setText(y);
         configurations.setGamesPlayed(configurations.getGamesPlayed() + 1);
         obj.initializeBoard();
         final TextView count = (TextView) findViewById(R.id.textViewforCount);

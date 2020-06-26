@@ -10,17 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".mainscreen"
+            android:name=".UI.mainscreen"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".gameplay"
+            android:name=".UI.gameplay"
             android:screenOrientation="landscape" />
-        <activity android:name=".helpactivity"></activity>
+        <activity android:name=".UI.helpactivity"></activity>
         <activity
-            android:name=".settings"
+            android:name=".UI.settings"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".MainActivity"
+            android:name=".UI.MainActivity"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
