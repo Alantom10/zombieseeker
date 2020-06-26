@@ -25,11 +25,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        logo = (ImageView) findViewById(R.id.logoImage);
+        logo = (ImageView) findViewById(R.id.logoImage);        // animation for the game logo
         Animation logoAnimation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.lefttoright);
         logo.startAnimation(logoAnimation);
 
-        shuttle = (ImageView) findViewById(R.id.shuttleImage);
+        shuttle = (ImageView) findViewById(R.id.shuttleImage);      // animation for the shuttle logo launch
         Animation shuttleAnimation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.downtoup);
         shuttle.startAnimation(shuttleAnimation);
 
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onAnimationEnd(Animation animation) {
+            public void onAnimationEnd(Animation animation) {       // timer to change to main screen after 4 secs if skip button isn't clicked
                 if (isSkipped == false) {
                     Timer timer;
                     timer = new Timer();
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void setupSkipBtn() {
+    private void setupSkipBtn() {   // setting up skip button to skip the animation
 
         Button skipBtn = (Button) findViewById(R.id.skipButton);
         skipBtn.setOnClickListener(new View.OnClickListener() {

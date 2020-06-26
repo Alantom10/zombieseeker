@@ -21,11 +21,11 @@ public class mainscreen extends AppCompatActivity {
         setupOptionsBtn();
     }
 
-    public static Intent skipAnimation(Context context){
+    public static Intent skipAnimation(Context context){       // Intent to skip animation and move to mainscreen
         return new Intent(context, mainscreen.class);
     }
 
-    private void setupPlayBtn(){
+    private void setupPlayBtn(){        // setting up button for playing the game
         Button playBtn = (Button) findViewById(R.id.playGameBtn);
         playBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,7 +40,7 @@ public class mainscreen extends AppCompatActivity {
         return new Intent(c, mainscreen.class);
     }
 
-    private void setupHelpBtn() {
+    private void setupHelpBtn() {       // setting up button to move to Help page
         Button helpActivityBtn = (Button) findViewById(R.id.helpBtn);
         helpActivityBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,7 +51,7 @@ public class mainscreen extends AppCompatActivity {
         });
     }
 
-    private void setupOptionsBtn() {
+    private void setupOptionsBtn() {        // setting up button to move to options page
 
         Button options = (Button) findViewById(R.id.optionsBtn);
         options.setOnClickListener(new View.OnClickListener() {

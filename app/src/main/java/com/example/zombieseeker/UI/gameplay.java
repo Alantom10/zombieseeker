@@ -91,7 +91,7 @@ public class gameplay extends AppCompatActivity {
     private void gridButtonClicked(int i, int j) {
         Button button = buttons[i][j];
         lockButtonSizes();
-        if(obj.checkPlanet(i, j)){
+        if(obj.checkPlanet(i, j)){      // displaying number of planets when as planet is found
             obj.revealPlanet(i,j);
             for (int a = 0; a < rows; a++){
                 for(int b = 0; b < cols; b++){
@@ -135,38 +135,38 @@ public class gameplay extends AppCompatActivity {
         int newWidth= button.getWidth();
         int max = 7;
         int min = 1;
-        int random_int = (int) (Math.random() * (max - min + 1) + min);
-        if(random_int == 1){
+        int random_int = (int) (Math.random() * (max - min + 1) + min); // Generating random ints to choose between the 6 planets
+        if(random_int == 1){        // Planet 1
             Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.planet1);
             Bitmap scaled = Bitmap.createScaledBitmap(original, newWidth, newHeight,true);
             Resources resource = getResources();
             button.setBackground(new BitmapDrawable(resource, scaled));
         }
-        else if(random_int == 2){
+        else if(random_int == 2){        // Planet 2
             Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.planet2);
             Bitmap scaled = Bitmap.createScaledBitmap(original, newWidth, newHeight,true);
             Resources resource = getResources();
             button.setBackground(new BitmapDrawable(resource, scaled));
         }
-        else if(random_int == 3){
+        else if(random_int == 3){        // Planet 3
             Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.planet3);
             Bitmap scaled = Bitmap.createScaledBitmap(original, newWidth, newHeight,true);
             Resources resource = getResources();
             button.setBackground(new BitmapDrawable(resource, scaled));
         }
-        else if(random_int == 4){
+        else if(random_int == 4){        // Planet 4
             Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.planet4);
             Bitmap scaled = Bitmap.createScaledBitmap(original, newWidth, newHeight,true);
             Resources resource = getResources();
             button.setBackground(new BitmapDrawable(resource, scaled));
         }
-        else if(random_int == 5){
+        else if(random_int == 5){        // Planet 5
             Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.planet5);
             Bitmap scaled = Bitmap.createScaledBitmap(original, newWidth, newHeight,true);
             Resources resource = getResources();
             button.setBackground(new BitmapDrawable(resource, scaled));
         }
-        else {
+        else {        // Planet 6
             Bitmap original = BitmapFactory.decodeResource(getResources(), R.drawable.planet6);
             Bitmap scaled = Bitmap.createScaledBitmap(original, newWidth, newHeight,true);
             Resources resource = getResources();
@@ -174,7 +174,7 @@ public class gameplay extends AppCompatActivity {
         }
     }
 
-    private void lockButtonSizes() {
+    private void lockButtonSizes() {    // setting button sizes for the game
         for(int i = 0; i < rows; i++){
             for(int j = 0; j < cols; j++){
                 Button button = buttons[i][j];

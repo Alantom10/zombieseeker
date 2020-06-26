@@ -28,7 +28,7 @@ public class settings extends AppCompatActivity {
         createNumPlanetsRadioButtons();
    }
 
-    private void setupErase() {
+    private void setupErase() {     // Button to erase games played
         Button back = (Button) findViewById(R.id.eraseGames);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,6 +38,7 @@ public class settings extends AppCompatActivity {
         });
     }
 
+    // Creating Radio buttons for setting the number of planets
     private void createNumPlanetsRadioButtons() {
         RadioGroup numPlanet_group = (RadioGroup) findViewById(R.id.numPlanetsRadioGroup);
 
@@ -61,6 +62,7 @@ public class settings extends AppCompatActivity {
         }
     }
 
+    // Creating Radio buttons for setting the board size for the game
     private void createBoardSizeRadioButtons() {
         RadioGroup boardSize_group = (RadioGroup) findViewById(R.id.boardSizeRadioGroup);
 
@@ -68,8 +70,8 @@ public class settings extends AppCompatActivity {
         int[] cols = getResources().getIntArray(R.array.board_size_cols);
 
         for (int i = 0; i < rows.length; i++) {
-            final int board_row = rows[i];
-            final int board_col = cols[i];
+            final int board_row = rows[i];  // number of rows
+            final int board_col = cols[i];  // number of columns
 
             RadioButton button = new RadioButton(this);
             button.setText(board_row + " x " + board_col);
@@ -85,7 +87,7 @@ public class settings extends AppCompatActivity {
         }
     }
 
-    public static Intent switchOptions(Context context) {
+    public static Intent switchOptions(Context context) {   // Intent to switch to options page
         return new Intent(context, settings.class);
     }
 
