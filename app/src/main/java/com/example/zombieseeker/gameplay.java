@@ -62,7 +62,7 @@ public class gameplay extends AppCompatActivity {
                 btn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        gridButtonClicked( final_row, final_col);
+                        gridButtonClicked(final_row, final_col);
                     }
                 });
 

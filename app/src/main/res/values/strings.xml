@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Planet Seeker</string>
     <string name="skipBtnText"><![CDATA[Skip>>]]></string>
+    <string name="main_menu">Main Menu</string>
+    <string name="options">Options</string>
+    <string name="play_game">Play Game!</string>
+    <string name="help">help</string>
 </resources>

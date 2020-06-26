@@ -11,7 +11,7 @@
         android:id="@+id/mainmenutxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Main Menu"
+        android:text="@string/main_menu"
         android:textColor="#F4EBEB"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,47 +20,52 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.044" />
 
-    <LinearLayout
-        android:layout_width="700dp"
-        android:layout_height="320dp"
-        android:orientation="horizontal"
+    <Button
+        android:id="@+id/optionsBtn"
+        android:layout_width="168dp"
+        android:layout_height="62dp"
+        android:text="@string/options"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.923">
+        app:layout_constraintVertical_bias="0.55" />
 
-        <LinearLayout
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="391dp"
+        android:layout_height="288dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.852"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.593"
+        app:srcCompat="@drawable/planetseeker" />
 
-            <Button
-                android:id="@+id/playGameBtn"
-                android:layout_width="168dp"
-                android:layout_height="62dp"
-                android:text="Play Game!" />
+    <Button
+        android:id="@+id/playGameBtn"
+        android:layout_width="168dp"
+        android:layout_height="62dp"
+        android:text="@string/play_game"
+        app:layout_constraintBottom_toTopOf="@+id/optionsBtn"
+        app:layout_constraintEnd_toEndOf="@+id/optionsBtn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/optionsBtn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.723" />
 
-            <Button
-                android:id="@+id/optionsBtn"
-                android:layout_width="168dp"
-                android:layout_height="62dp"
-                android:text="Options" />
-
-            <Button
-                android:id="@+id/helpBtn"
-                android:layout_width="168dp"
-                android:layout_height="62dp"
-                android:text="help" />
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/planetseeker" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/helpBtn"
+        android:layout_width="168dp"
+        android:layout_height="62dp"
+        android:text="@string/help"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/optionsBtn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/optionsBtn"
+        app:layout_constraintTop_toBottomOf="@+id/optionsBtn"
+        app:layout_constraintVertical_bias="0.473" />
 </androidx.constraintlayout.widget.ConstraintLayout>
