@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView logo;
     ImageView shuttle;
+    boolean isSkipped = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,16 +42,17 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                Timer timer;
-                timer = new Timer();
-                timer.schedule(new TimerTask() {
-                    @Override
-                    public void run() {
-                        Intent intent = mainscreen.skipAnimation(MainActivity.this);
-                        startActivity(intent);
-                    }
-                }, 4000);
-
+                if (isSkipped == false) {
+                    Timer timer;
+                    timer = new Timer();
+                    timer.schedule(new TimerTask() {
+                        @Override
+                        public void run() {
+                            Intent intent = mainscreen.skipAnimation(MainActivity.this);
+                            startActivity(intent);
+                        }
+                    }, 4000);
+                }
             }
 
             @Override
@@ -65,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
         skipBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                isSkipped = true;
                 Intent intent = mainscreen.skipAnimation(MainActivity.this);
                 startActivity(intent);
             }
