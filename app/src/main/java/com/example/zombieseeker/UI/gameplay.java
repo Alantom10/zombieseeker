@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.util.Log;
@@ -109,6 +110,7 @@ public class gameplay extends AppCompatActivity {
         else if(obj.checkRevealedPlanet(i,j)){
             button.setText(Integer.toString(obj.totalPlanets(i, j)));
             button.setEnabled(false);
+            button.setTextColor(Color.BLACK);
             scans = scans + 1;
             final TextView x= (TextView) findViewById(R.id.Scans);
             String s = "Scans: " +  Integer.toString(scans);
@@ -118,6 +120,7 @@ public class gameplay extends AppCompatActivity {
             button.setText(Integer.toString(obj.totalPlanets(i, j)));
             button.setEnabled(false);
             scans = scans + 1;
+            button.setTextColor(Color.BLACK);
             final TextView x = (TextView) findViewById(R.id.Scans);
             String s = "Scans: " +  Integer.toString(scans);
             x.setText(s);
