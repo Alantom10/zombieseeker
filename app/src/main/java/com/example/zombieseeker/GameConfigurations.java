@@ -1,10 +1,25 @@
 package com.example.zombieseeker;
 
 public class GameConfigurations {
-    private int gameRows;
-    private int gameCols;
-    private int gameTargets;
-    private int gamesPlayed;
+    private int gameRows = 6;
+    private int gameCols = 15;
+    private int gameTargets = 8;
+    private int gamesPlayed = 0;
+
+    private static GameConfigurations instance;
+
+    private GameConfigurations() {
+        //prevents duplicate initialization
+    }
+
+
+    public static GameConfigurations getInstance() {
+        if(instance == null){
+            instance = new GameConfigurations();
+        }
+        return instance;
+    }
+
 
     public int getGameRows() {
         return gameRows;
@@ -13,7 +28,6 @@ public class GameConfigurations {
     public void setGameRows(int gameRows) {
         this.gameRows = gameRows;
     }
-
 
     public int getGameCols() {
         return gameCols;

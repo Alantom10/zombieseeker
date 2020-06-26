@@ -16,8 +16,9 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 public class gameplay extends AppCompatActivity {
-    private int rows = 4;
-    private int cols = 6;
+    private GameConfigurations configurations;
+    private int rows;
+    private int cols;
     Button buttons[][] = new Button[rows][cols];
     gamelogic obj = new gamelogic();
     private int scans = 0;
@@ -26,9 +27,13 @@ public class gameplay extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gameplay);
+        configurations = GameConfigurations.getInstance();
+        rows = configurations.getGameRows();
+        cols = configurations.getGameCols();
         obj.setCols(cols);
         obj.setRows(rows);
-        obj.setNum_planets(8);
+        obj.setNum_planets(configurations.getGameTargets());
+        configurations.setGamesPlayed(configurations.getGamesPlayed() + 1);
         obj.initializeBoard();
         final TextView count = (TextView) findViewById(R.id.textViewforCount);
         String s = "Found " + Integer.toString(obj.getplanets_Found()) + " of " + Integer.toString(obj.getNum_planets()) + " planets";

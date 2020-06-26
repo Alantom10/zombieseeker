@@ -15,12 +15,15 @@ import android.widget.Toast;
 
 public class settings extends AppCompatActivity {
 
+    private GameConfigurations configurations;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
 //        setupBack();
+        configurations = GameConfigurations.getInstance();
         createBoardSizeRadioButtons();
         createNumPlanetsRadioButtons();
    }
@@ -40,8 +43,7 @@ public class settings extends AppCompatActivity {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(settings.this, "You clicked " + numPlanet, Toast.LENGTH_SHORT)
-                            .show();
+                    configurations.setGameTargets(numPlanet);
                 }
             });
 
@@ -65,8 +67,8 @@ public class settings extends AppCompatActivity {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(settings.this, "You clicked " + Integer.toString(board_row) + " x " + Integer.toString(board_col), Toast.LENGTH_SHORT)
-                            .show();
+                    configurations.setGameCols(board_col);
+                    configurations.setGameRows(board_row);
                 }
             });
             boardSize_group.addView(button);
