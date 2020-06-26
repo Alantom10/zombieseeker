@@ -17,6 +17,7 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import com.example.zombieseeker.AlertMessage;
 import com.example.zombieseeker.model.GameConfigurations;
 import com.example.zombieseeker.R;
 import com.example.zombieseeker.model.gamelogic;
