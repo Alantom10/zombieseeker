@@ -14,6 +14,7 @@ public class GameConfigurations {
         this.gameRows = gameRows;
     }
 
+
     public int getGameCols() {
         return gameCols;
     }
