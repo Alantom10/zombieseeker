@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class settings extends AppCompatActivity {
 
@@ -30,11 +31,19 @@ public class settings extends AppCompatActivity {
         int[] numPlanets = getResources().getIntArray(R.array.num_of_planets);
 
         for (int i = 0; i < numPlanets.length; i++) {
-            int numPlanet = numPlanets[i];
+            final int numPlanet = numPlanets[i];
 
             RadioButton button = new RadioButton(this);
             button.setText(Integer.toString(numPlanet));
             button.setTextColor(Color.WHITE);
+
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(settings.this, "You clicked " + numPlanet, Toast.LENGTH_SHORT)
+                            .show();
+                }
+            });
 
             numPlanet_group.addView(button);
         }
