@@ -11,14 +11,12 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import com.example.zombieseeker.AlertMessage;
 import com.example.zombieseeker.model.GameConfigurations;
 import com.example.zombieseeker.R;
 import com.example.zombieseeker.model.gamelogic;
