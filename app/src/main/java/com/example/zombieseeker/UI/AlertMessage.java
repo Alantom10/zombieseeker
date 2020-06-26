@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatDialogFragment;
 import com.example.zombieseeker.R;
 
 
+
 public class AlertMessage extends AppCompatDialogFragment {
 
     @NonNull
